@@ -1,5 +1,7 @@
 # 🥗 MacroSnap — AI Vision Nutrition Chatbot
 
+**Live app:** https://macrosnap-aivison.streamlit.app/
+
 Snap a meal photo (or describe it), get calories and macros from **Gemini Vision**, watch an
 animated dashboard fill up, and text yourself the summary on **WhatsApp** through Twilio.
 
