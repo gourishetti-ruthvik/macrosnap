@@ -1,0 +1,52 @@
+.dash {
+  padding: 1rem 1.1rem 0.9rem;
+  border-radius: 1.4rem;
+  background: linear-gradient(160deg, rgba(16, 185, 129, 0.10), rgba(132, 204, 22, 0.03));
+  border: 1px solid rgba(16, 185, 129, 0.22);
+  box-shadow: 0 14px 40px -24px rgba(5, 80, 50, 0.55);
+}
+
+.head { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 0.6rem; }
+.head h3 { margin: 0; font-family: Outfit, sans-serif; font-size: 1.05rem; }
+.head .count { font-size: 0.8rem; opacity: 0.65; }
+
+.rings { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.5rem; }
+.ring { position: relative; margin: 0; text-align: center; }
+.ring svg { width: 100%; max-width: 116px; transform: rotate(-90deg); overflow: visible; }
+.ring circle { fill: none; stroke-width: 10; }
+.ring .track { stroke: color-mix(in srgb, var(--c) 16%, transparent); }
+.ring .bar {
+  stroke: var(--c);
+  stroke-linecap: round;
+  stroke-dasharray: 100; /* offset lives in the attribute: Motion animates SVG attrs */
+  filter: drop-shadow(0 0 6px color-mix(in srgb, var(--c) 45%, transparent));
+}
+.ring.over .bar { stroke: #ef4444; }
+
+.ring .center {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  aspect-ratio: 1;
+  max-width: 116px;
+  margin: 0 auto;
+  display: grid;
+  place-content: center;
+  line-height: 1.1;
+}
+.ring .val { font-family: Outfit, sans-serif; font-size: 1.35rem; font-weight: 700; }
+.ring .goal { font-size: 0.68rem; opacity: 0.6; }
+.ring figcaption { margin-top: 0.3rem; font-size: 0.78rem; font-weight: 600; color: var(--c); }
+
+.meals { display: flex; flex-wrap: wrap; gap: 0.4rem; list-style: none; margin: 0.8rem 0 0; padding: 0; }
+.meals:empty::before { content: "Log a meal and watch the rings fill up 👀"; font-size: 0.8rem; opacity: 0.6; }
+.meals li {
+  padding: 0.25rem 0.7rem;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  background: rgba(16, 185, 129, 0.12);
+  border: 1px solid rgba(16, 185, 129, 0.25);
+}
+
+@media (max-width: 520px) {
+  .rings { grid-template-columns: repeat(2, 1fr); row-gap: 0.9rem; }
+}

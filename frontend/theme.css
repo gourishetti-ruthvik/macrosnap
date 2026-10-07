@@ -1,0 +1,63 @@
+/* Global polish on top of .streamlit/config.toml. Injected once by ui.inject_theme(). */
+
+/* Soft brand glow behind the whole app */
+[data-testid="stApp"] {
+  background-image:
+    radial-gradient(60rem 30rem at 110% -10%, rgba(16, 185, 129, 0.12), transparent 60%),
+    radial-gradient(40rem 24rem at -10% 110%, rgba(245, 158, 11, 0.08), transparent 60%);
+  background-attachment: fixed;
+}
+
+/* Gradient headline */
+h1 {
+  background: linear-gradient(120deg, #059669 0%, #84cc16 55%, #f59e0b 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent !important;
+  letter-spacing: -0.02em;
+}
+
+/* Chat bubbles: card look */
+[data-testid="stChatMessage"] {
+  border: 1px solid rgba(5, 150, 105, 0.14);
+  border-radius: 1.25rem;
+  padding: 0.85rem 1rem;
+  box-shadow: 0 6px 24px -14px rgba(5, 80, 50, 0.35);
+}
+
+/* Kokonut-style AI input: gradient glow on focus */
+[data-testid="stChatInput"] > div {
+  transition: box-shadow 0.3s ease;
+}
+[data-testid="stChatInput"] > div:focus-within {
+  box-shadow: 0 0 0 2px rgba(5, 150, 105, 0.45), 0 10px 40px -10px rgba(132, 204, 22, 0.55);
+}
+
+/* Onboarding form as a floating card */
+[data-testid="stForm"] {
+  box-shadow: 0 18px 50px -24px rgba(5, 80, 50, 0.45);
+}
+
+/* Primary buttons: gradient + lift */
+button[kind="primary"],
+button[kind="primaryFormSubmit"] {
+  background: linear-gradient(120deg, #059669, #10b981 60%, #84cc16);
+  border: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+button[kind="primary"]:not(:disabled):hover,
+button[kind="primaryFormSubmit"]:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 24px -10px rgba(5, 150, 105, 0.7);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  [data-testid="stChatMessage"] {
+    animation: bubble-in 0.45s cubic-bezier(0.2, 0.9, 0.3, 1.2) both;
+  }
+}
+
+@keyframes bubble-in {
+  from { opacity: 0; transform: translateY(12px) scale(0.98); }
+  to { opacity: 1; transform: none; }
+}

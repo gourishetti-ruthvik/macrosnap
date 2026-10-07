@@ -1,0 +1,25 @@
+[theme]
+font = "Inter:https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+headingFont = "Outfit:https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&display=swap"
+primaryColor = "#059669"
+baseRadius = "large"
+buttonRadius = "full"
+showWidgetBorder = true
+
+[theme.light]
+backgroundColor = "#F7FAF8"
+secondaryBackgroundColor = "#EAF5EF"
+textColor = "#0F1F17"
+borderColor = "#D5E8DD"
+
+[theme.dark]
+backgroundColor = "#0B1310"
+secondaryBackgroundColor = "#14211B"
+textColor = "#E4F1EA"
+borderColor = "#22352C"
+
+[client]
+toolbarMode = "minimal"
+
+[browser]
+gatherUsageStats = false
